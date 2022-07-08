@@ -1,4 +1,4 @@
-### clone the repo
+### `clone the repo`
 
 ### `npm i`
 
