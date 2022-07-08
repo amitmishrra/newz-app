@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Charmonman&display=swap');
+
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(146, 145, 145);
+    height: 75px;
+}
+
+.logo{
+    display: flex;
+}
+.logo span{
+    text-align: center;
+    font-size: 45px;
+  background: -webkit-linear-gradient(40deg, rgb(249 203 110) 50%, rgb(63 64 66) 50%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Charmonman', cursive;
+  font-weight: 900;
+}
+
+.logo img{
+    width: 60px;
+    height: 60px;
+}
