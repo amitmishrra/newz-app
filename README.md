@@ -1,6 +1,6 @@
 ### clone the repo
 
-### 'npm i'
+### `npm i`
 
 ### `npm start`
 
