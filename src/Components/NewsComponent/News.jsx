@@ -99,7 +99,7 @@ useEffect(()=>{
     <>
       <div className="news-box">
         {
-          loading ?
+          loading && news.length > 1?
 
           news.map((element) => {
             return (
