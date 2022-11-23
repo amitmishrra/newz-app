@@ -5,8 +5,11 @@ import NavLinks from "../Components/NavLinks/NavLinks"
 const CommonContainer = ({children}) => {
     return (
         <>
-        <Navbar/>
+       <div className='topSection'>
+       <Navbar/>
         <NavLinks/>
+       </div>
+
             {children}
         </>
     )

@@ -3,6 +3,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    padding-top: 130px;
 }
 
 .news-buttons{
@@ -17,6 +18,9 @@
     margin-right: 20px;
     height:30px;
     width: 100px;
+    border-radius: 15px;
+    padding: 7px;
+    transition: 0.3s;
     color: rgb(249 203 110);
     background-color: rgb(63 64 66);
     border: none;
@@ -28,8 +32,30 @@
 }
 
 
-@media screen and (max-width: 600px) {
+.loader{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.circleContainer{
+    margin-top: 10px;
+}
 
+.loadingText{
+    font-size: 25px;
+}
+
+.circularLoader{
+    color: rgb(249 203 110) !important;
+}
+
+@media screen and (min-width: 600px) {
+
+    .loadingText{
+        font-size: 25px;
+    }
 
 }

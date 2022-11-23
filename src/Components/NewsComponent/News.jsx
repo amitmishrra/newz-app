@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import NewsItem from '../newsItem/NewsItem'
 import "./news.css"
+import CircularProgress from '@mui/material/CircularProgress';
 export default function News(props) {
   const [page, setPage] = useState(1);
 
+  const [loading, setLoading] = useState(false)
 const [category, setCategory] = useState("general");
 
 // apiKey = "57f823bf1d9e487c8e841024c2a5bdb2"
@@ -14,34 +16,41 @@ useEffect(()=>{
   if(window.location.pathname=="/general"){
     setCategory("general"); 
     console.log(category)
+    setLoading(false)
 
  }
    if(window.location.pathname=="/business"){
     setCategory("business");
     console.log(category)
+    setLoading(false)
  }
    if(window.location.pathname=="/entertainment"){
     setCategory("entertainment");
     console.log(category)
+    setLoading(false)
  }
    if(window.location.pathname=="/technology"){
     setCategory("technology");
     console.log(category)
+    setLoading(false)
  }
    if(window.location.pathname=="/health"){
     setCategory("health");
     console.log(category)
+    setLoading(false)
  }
    if(window.location.pathname=="/science"){
     setCategory("science");
     console.log(category)
+    setLoading(false)
  }
    if(window.location.pathname=="/"){
     setCategory("sports");
     console.log(category)
+    setLoading(false)
  }
 
-},[category])
+},[category, window.location.pathname])
 
 
 
@@ -50,47 +59,36 @@ useEffect(()=>{
   const [country, setCountry] = useState("in");
   const [news, setNews] = useState([]);
   const [total, setTotal] = useState();
-  let api = `https://newsapi.org/v2/top-headlines?country=${country}&category=${props.category}&apiKey=${apiKey}&page=${page}&pageSize=20
-  `
+  let api = `https://newsapi.org/v2/top-headlines?country=${country}&category=${props.category}&apiKey=${apiKey}&page=${page}&pageSize=20`;
 
   useEffect(() => {
-
     fetch(api).
       then((resp) => resp.json()).
-      then(resp => setNews(resp.articles));
+      then(resp => {
+        setNews(resp.articles)
+        setTotal(resp.totalResults)
+      }).then(
+        setTimeout(()=>{
+          setLoading(true)
+        }, 3000)
+      )
 
-  }, [api])
+  }, [category, api ,page])
 
 
-
-  const calcTotal = () => {
-    fetch(api).
-      then((resp) => resp.json()).then(resp => setTotal(resp.totalResults));
-      // console.log(total)
-  }
-
-   calcTotal();
   let totalPages = Math.ceil(total/20);
-  // console.log(totalPages);
 
   const handlePrev = async () => {
       setPage(page - 1);
+      setLoading(false)
       console.log(page);
-      api = `https://newsapi.org/v2/top-headlines?country=${country}&category=${props.category}&apiKey=${apiKey}&page=${page-1}&pageSize=20`
-      console.log(api)
-      fetch(api).
-        then((resp) => resp.json()).
-        then(resp => setNews(resp.articles));
+     
   }
 
   const handleNext = async () => {
       setPage(page + 1);
+      setLoading(false)
       console.log(page);
-      api = `https://newsapi.org/v2/top-headlines?country=${country}&category=${props.category}apiKey=${apiKey}&page=${page+1}&pageSize=20`
-      console.log(api)
-      fetch(api).
-        then((resp) => resp.json()).
-        then(resp => setNews(resp.articles));
     }
 
   
@@ -101,6 +99,8 @@ useEffect(()=>{
     <>
       <div className="news-box">
         {
+          loading ?
+
           news.map((element) => {
             return (
               <>
@@ -109,7 +109,16 @@ useEffect(()=>{
                 />
               </>
             )
-          })
+          }) : 
+         <div className='loader'>
+          <div className="loadingText">
+          Loading News....
+          </div>
+         
+         <div className="circleContainer">
+         <CircularProgress className='circularLoader'  />
+         </div>
+         </div>
         }
       </div>
 

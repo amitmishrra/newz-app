@@ -1,26 +1,28 @@
-.newsitem{
+.newsitem {
     display: flex;
-    
+
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(179, 175, 175);
+    /* border: 1px solid rgb(179, 175, 175); */
+    border-radius: 10px;
     width: 400px;
     justify-content: center;
     margin-left: 20px;
     margin-top: 20px;
     padding: 7px;
     border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgb(179, 175, 175) ;
 }
 
-.container img{
+.container img {
     margin: auto;
     width: 100%;
 }
 
-.bottom{
+.bottom {
     padding: 5px;
     display: flex;
     justify-content: space-between;
@@ -28,52 +30,53 @@
     height: 50px;
 }
 
-.info div{
-font-size:12px;
-font-weight: 650;
-text-align: right;
-padding-bottom: 2px;
+.info div {
+    font-size: 12px;
+    font-weight: 650;
+    text-align: right;
+    padding-bottom: 2px;
 }
 
 
 
-.button{
+.button {
     width: 100px;
     height: 35px;
     background-color: rgb(249 203 110);
     border: none;
     border-radius: 7px;
-    /* margin: auto; */
+    transition: 0.3s;
 }
 
-.button:hover{
+.button:hover {
     background-color: rgb(63 64 66);
-    color:rgb(249 203 110) ;
+    color: rgb(249 203 110);
 }
 
 
-.container h5{
-margin-top: 0px;
-padding: 10px;
+.container h5 {
+    margin-top: 0px;
+    padding: 10px;
 }
-.container p{
-margin-top: -20px;
-padding: 10px;
+
+.container p {
+    margin-top: -20px;
+    padding: 10px;
 }
 
 
 @media screen and (max-width : 600px) {
 
-    .newsitem{
+    .newsitem {
         display: flex;
         /* flex-direction: column; */
         width: 100%;
         justify-content: flex-start;
     }
-    .container{
+
+    .container {
         display: flex;
         flex-direction: column;
-        border: 1px solid black;
         width: 350px;
         justify-content: center;
         margin: auto;

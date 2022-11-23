@@ -1,49 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Padauk&display=swap');
 
-.navlinks{
-    margin-top:10px;
+.navlinks {
+    margin-top: 10px;
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 10px;
 }
 
-.menu_item
-{
+.menu_item {
     list-style: none;
     font-size: 25px;
-    border: none solid black;
-    border-radius: 15px;
+    border: none ;
+    border-radius: 45px;
     padding: 7px;
-   background-color: rgb(249 203 110);
-   color: rgb(63 64 66);
-   font-family: 'Padauk', sans-serif;
-   text-decoration: none;
+    transition: 0.3s;
+    background-color: rgb(249 203 110);
+    color: rgb(63 64 66);
+    font-family: 'Padauk', sans-serif;
+    text-decoration: none;
+  
 }
 
-.menu_item:hover{
+.menu_item:hover {
     color: rgb(249 203 110);
     background-color: rgb(63 64 66);
 }
 
 .active_item {
     background-color: rgb(63 64 66);
-    color:rgb(249 203 110) ;
+    color: rgb(249 203 110);
     font-family: 'Padauk', sans-serif;
     text-decoration: none;
-  }
-  
+}
+
 @media screen and (max-width : 600px) {
-    
-    .navlinks{
-       /* position: absolute; */
-       /* left: -40px; */
-       /* width: 110%; */
+
+    .navlinks {
+        /* position: absolute; */
+        /* left: -40px; */
+        /* width: 110%; */
         display: flex;
         justify-content: flex-start;
         overflow: scroll;
     }
-    
-    .menu_item{
+
+    .menu_item {
         list-style: none;
         padding-left: 8px;
         padding-right: 8px;
@@ -51,7 +52,7 @@
         font-size: 20px;
 
     }
-    
+
 
 
 }

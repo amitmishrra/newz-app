@@ -6,7 +6,7 @@ export default function NewsItem(props) {
 <>
 <div className="newsitem">
     <div className="container">
-       <img src={props.image} alt="there is an image" />
+       <img src={props.image} alt="Loading Image" />
        <h5> {props.title}</h5>
        <p>{props.description}</p>
        <div className="bottom">
